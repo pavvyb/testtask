@@ -6,13 +6,16 @@
           <div class="brand-logo center">
             <router-link to="/" class="tablinks">Main Page</router-link>
           </div>
-          <div v-if="authorized">
+          <div v-if="$store.state.authorized">
             <ul class="right float-left">
               <li>
                 <router-link to="/name" class="tablinks" id="defaultopen">Login</router-link>
               </li>
               <li>
                 <router-link to="/email" class="tablinks">Email</router-link>
+              </li>
+              <li>
+                <a v-on:click="logout" class="tablinks">Logout</a>
               </li>
             </ul>
           </div>
@@ -33,12 +36,21 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import firebase from '../scripts/firebaseinit'
 export default {
   name: 'menubar',
-  data: function () {
+  data () {
     return {
-      authorized: firebase.auth().currentUser
+
+    }
+  },
+  methods: {
+    logout: function() {
+      firebase.auth().signOut().then(() => {
+        this.$router.replace('/login')
+        this.$store.commit('setAuthorized', false)
+      })
     }
   }
 }

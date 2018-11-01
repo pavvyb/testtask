@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import firebase from 'firebase'
 export default{
   name: 'loginpage',
@@ -44,6 +45,7 @@ export default{
         .then(
           user => {
             this.$router.replace('/name')
+            this.$store.commit('setAuthorized', true)
           },
           err => {
             alert(err.message)

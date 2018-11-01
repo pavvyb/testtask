@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex'
 import firebase from 'firebase'
 export default {
   name: 'register',

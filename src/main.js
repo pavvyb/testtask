@@ -4,6 +4,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App'
 import router from './router'
+import store from './store/index'
 import firebase from 'firebase'
 
 Vue.use(Vuex)
@@ -17,7 +18,8 @@ firebase.auth().onAuthStateChanged(function (user) {
       el: '#app',
       template: '<App/>',
       components: { App },
-      router
+      router,
+      store
     })
   }
 })
