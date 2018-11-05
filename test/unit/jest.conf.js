@@ -15,7 +15,7 @@ module.exports = {
     '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   testPathIgnorePatterns: [
-    "node_modules/(?!b-button)",
+    'node_modules/(?!b-button)',
     '<rootDir>/test/e2e'
   ],
   snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
@@ -28,6 +28,6 @@ module.exports = {
     '!src/router/index.js',
     '!**/node_modules/**'
   ],
-  "verbose": true,
-  "testURL": "http://localhost/",
+  'verbose': true,
+  'testURL': 'http://localhost/'
 }

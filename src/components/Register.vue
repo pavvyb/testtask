@@ -10,7 +10,7 @@
         </div>
         <div class="input-field">
           <i class="material-icons prefix">assignment_ind</i>
-          <input type="text" id="password" v-model="login">
+          <input type="text" id="login" v-model="login">
           <label for="login">Enter your login:</label>
         </div>
         <div class="input-field">
@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
 import firebase from 'firebase'
 export default {
   name: 'register',

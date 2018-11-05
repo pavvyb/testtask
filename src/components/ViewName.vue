@@ -21,7 +21,7 @@ export default{
     login: ''
   }),
   created () {
-    if(firebase.auth().currentUser) {
+    if (firebase.auth().currentUser) {
       this.login = firebase.auth().currentUser.displayName
     }
   }

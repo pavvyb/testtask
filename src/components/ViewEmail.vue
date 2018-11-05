@@ -23,7 +23,7 @@ export default{
     }
   },
   created () {
-    if(firebase.auth().currentUser) {
+    if (firebase.auth().currentUser) {
       this.email = firebase.auth().currentUser.email
     }
   }

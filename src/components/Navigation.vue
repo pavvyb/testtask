@@ -36,7 +36,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
 import firebase from '../scripts/firebaseinit'
 export default {
   name: 'menubar',
@@ -46,7 +45,7 @@ export default {
     }
   },
   methods: {
-    logout: function() {
+    logout: function () {
       firebase.auth().signOut().then(() => {
         this.$router.replace('/login')
         this.$store.commit('setAuthorized', false)
